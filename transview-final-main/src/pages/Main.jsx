@@ -26,6 +26,7 @@ import { useState } from 'react';
 function Main() {
   const [formData,setFormData]=useState({});
   const [greenFormInfo,setGreenFormInfo]=useState({});
+  const [ewaybill , setewaybill] = useState("");
   return (
     <div className='flex flex-col'>
      
@@ -35,7 +36,7 @@ function Main() {
           <Route path="/" element={<HomePage />} />
           <Route path="/green-form" element={<GreenForm formData={formData} greenFormInfo={greenFormInfo} setGreenFormInfo={setGreenFormInfo} />} />
           <Route path="/GreenFormSubmit" element={<GreenFormSubmit  formData={formData}  greenFormInfo={greenFormInfo} />} />
-          <Route path="/temp2" element={<Temp2 formData={formData} setFormData={setFormData}/>} />
+          <Route path="/temp2" element={<Temp2  ewaybill = {ewaybill} formData={formData} setFormData={setFormData}/>} />
           <Route path="/temp23" element={<Temp23 formData={formData} greenFormInfo={greenFormInfo}/>} />
           <Route path="/ewaybill" element={<Ewaybill />} />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -48,7 +49,7 @@ function Main() {
           <Route path="/docupload" element={<DocUpload />} />
           <Route path="/vehicleTracking" element={<VehicleTracking />} />
           <Route path="/Trip" element={<Trip />} />
-          <Route path="/ewayauth" element={<Ewayauth />} />
+          <Route path="/ewayauth" element={<Ewayauth ewaybill = {ewaybill} setewaybill = {setewaybill} />} />
           <Route path="/VehicleRc" element={<VehicleRc />} />
           <Route path="/TrackAuth" element={<TrackAuth />} />
 

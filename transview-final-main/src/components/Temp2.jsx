@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { IoTrashBinSharp } from "react-icons/io5";
 import { useState } from "react";
 
-function Temp2({ formData, setFormData }) {
+function Temp2({  ewaybill ,  formData, setFormData }) {
   const navigate = useNavigate();
   const greenformgo = () => {
     navigate("/green-form");
   };
+
+  useEffect(()=>{
+    console.log(ewaybill);
+  })
+   
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     console.log(formData);

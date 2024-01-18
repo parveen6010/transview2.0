@@ -6,13 +6,16 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
       
-function Ewayauth() {
-  const [isChecked, setIsChecked] = useState(false);
-  const handleChange = (e) => {
-    setIsChecked(!isChecked);
-  };
+function Ewayauth({ewaybill,setewaybill}) {
   const navigate = useNavigate();
 
+     const [isChecked, setIsChecked] = useState(false);
+
+  const handleChange = (e) => {
+    setewaybill(e.target.value);
+    // setIsChecked(!isChecked);
+  };
+   
   const tempgo = () => {
      navigate("/temp2");
   }
@@ -35,6 +38,7 @@ function Ewayauth() {
             className="bg-gray-200 outline-none text-sm flex-1"
             name="EwayBillNum"
             placeholder="E-Way Bill Number"
+            onChange={handleChange}
           />
         </div>
         <div className="flex flex-row justify-evenly w-full pb-5">
